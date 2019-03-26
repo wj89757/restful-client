@@ -14,6 +14,8 @@ import org.vimoops.host.common.adapter.restful.invocation.RestfulInvocationPrepa
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 
+import java.util.Date;
+
 @ContextConfiguration("classpath:restful-client-test.xml")
 public class RestfulClientTest extends AbstractJUnit4SpringContextTests {
 
@@ -85,6 +87,27 @@ public class RestfulClientTest extends AbstractJUnit4SpringContextTests {
             }
         });
         
+        System.out.println(result.getData());
+    }
+
+    @Test
+    public void test_one() {
+        RestfulResult<JSONObject> result = restfulClient.doPost(new RestfulInvocationPrepare() {
+
+            public void prepareInvocation(RestfulInvocationContext context) {
+                context.url("https://api.baidu.com/json/sms/service/KRService/getKRCustom")
+                        .header("opUsername", "<上**邻>")
+                        .header("opPassword", "<6**D>")
+                        .header("tgUsername", "<上**邻>")
+                        .header("tgPassword", "<6**D>")
+                        .header("tgSubname", "<上**邻>")
+                        .header("bceUser", "<d**f>")
+                        .param("id","3386777888")
+                        .param("idType","5");
+            }
+        });
+        System.out.println(new Date());
+        System.out.println(System.currentTimeMillis());
         System.out.println(result.getData());
     }
 }

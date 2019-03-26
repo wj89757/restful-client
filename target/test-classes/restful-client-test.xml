@@ -10,18 +10,18 @@
 	default-autowire="byName">
 
 	<bean id="webTargetSource"
-		class="com.xiaoyu.jyxb.site.common.adapter.restful.SimpleWebTargetSource">
+		class="org.vimoops.host.common.adapter.restful.SimpleWebTargetSource">
 		<property name="client">
 			<bean
-				class="com.xiaoyu.jyxb.site.common.adapter.restful.spring.JerseyClientFactoryBean" />
+				class="org.vimoops.host.common.adapter.restful.spring.JerseyClientFactoryBean" />
 		</property>
 	</bean>
 
 	<bean id="restfulResponseConvertor"
-		class="com.xiaoyu.jyxb.site.common.adapter.restful.JSONObjectResultResponseConvertor" />
+		class="org.vimoops.host.common.adapter.restful.JSONObjectResultResponseConvertor" />
 
 
 	<bean id="restfulClient"
-		class="com.xiaoyu.jyxb.site.common.adapter.restful.RestfulClient" />
+		class="org.vimoops.host.common.adapter.restful.RestfulClient" />
 
 </beans>
